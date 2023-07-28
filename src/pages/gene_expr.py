@@ -1,12 +1,10 @@
 import dash
-from dash import dcc, html
+from dash import html
 import dash_bootstrap_components as dbc
 
 dash.register_page(__name__,
                     name='Gene Expression', 
-                    gene_expr=True,
                     path='/gene_expr',
-                    order=[2]
                     )
      
 
@@ -93,9 +91,10 @@ def layout():
                     dbc.Tab(label='Proportion Plot', tab_id='proportions')
                 ], 
                 id='tab',
-                active_tab='histogram',
+                active_tab='histogram'
+                ,
                 ),
-                #html.Hr(),
+                html.Hr(),
             ]),
     
             

@@ -183,7 +183,8 @@ app.layout =dbc.Container([
         ],
         
     )
-], fluid=True)
+], fluid=True,
+                    )
 
 
 if __name__ == "__main__":
