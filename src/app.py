@@ -22,6 +22,7 @@ navbar = dbc.NavbarSimple(
     color="primary",
     dark=True,
     fluid=True,
+    fixed='bottom',
     sticky='top',
 )
 
@@ -50,14 +51,6 @@ sidebar = html.Div(
                 ),
                 dbc.NavLink(
                     [
-                        html.I(className="fas fa-brands fa-stack-overflow me-2"),
-                        html.Span("Data Sets"),
-                    ],
-                    href="/datasets",
-                    active="exact",
-                ),
-                dbc.NavLink(
-                    [
                         html.I(className="fas fa-solid fa-glasses me-2"),
                         html.Span("Background"),
                     ],
@@ -80,6 +73,14 @@ sidebar = html.Div(
                     href="/neurovas_signal",
                     active="exact",
                 ),
+                dbc.NavLink(
+                    [
+                        html.I(className="fas fa-brands fa-stack-overflow me-2"),
+                        html.Span("Data Sets"),
+                    ],
+                    href="/datasets",
+                    active="exact",
+                ),               
                 dbc.NavLink(
                     [html.Span("— EXPRESSION ANALYSIS —")],
                     href="#",
@@ -163,7 +164,8 @@ sidebar = html.Div(
  )
 
 app.layout =dbc.Container([
-    dbc.Row(navbar),
+    dbc.Row([navbar]
+            ),
     dbc.Row(
         [
             dbc.Col(
